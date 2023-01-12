@@ -2,6 +2,12 @@
 # ~/.bashrc
 #
 
+#Custom scripts
+source ~/.config/bash/aliases
+source ~/.config/bash/functions
+source ~/.config/bash/autocomplete
+
+
 # Conda
 source ~/.config/bash/anaconda
 

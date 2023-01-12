@@ -1,0 +1,58 @@
+#!/bin/sh
+
+#Navigations
+alias dwn='cd ~/Downloads'
+alias notes='cd ~/Desktop/notes'
+alias straw='cd ~/last-straw'
+alias conf='cd ~/.config'
+alias bcon='cd ~/.config/bash'
+alias ~='cd ~'
+
+#Typos
+alias sl='ls'
+alias dcoker='docker'
+
+#Quick Typing
+alias cd..='cd ..'
+alias ..='cd ..'
+alias cls='clear'
+
+#Misc Commands
+alias clip='xclip -sel clip'
+alias jpnb='jupyter notebook'
+##APT
+#alias aptup='sudo apt update'
+#alias aptug='sudo apt upgrade'
+#alias aptin='sudo apt install'
+alias ssr='sudo /etc/init.d/ssh restart'
+alias cppt='pwd | clip'
+
+#Python Commands
+alias p='python'
+alias pi='pip install'
+alias pl='pip list'
+alias pfr='pip freeze > requirements.txt'
+alias pac='source env/bin/activate'
+alias pdac='deactivate'
+alias jpnb='jupyter notebook'
+
+#Git Commands
+alias gi='git init'
+alias gs='git status'
+alias gl='git log'
+alias gc='git clone'
+alias ga='git add'
+alias gm='git commit'
+alias gp='git pull'
+alias gpp='git push'
+
+#Conda Commands
+alias conn='conda create -n'
+alias conr='conda env remove -n'
+alias cona='conda activate'
+alias cond='conda deactivate'
+alias conl='conda info --envs'
+
+#Show Aliases or Funtions
+alias aliases="grep --color=always -e '^$' -e "alias" '/home/amit/.config/bash/aliases'|less -R"
+

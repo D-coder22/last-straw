@@ -1,0 +1,31 @@
+#!/bin/sh
+
+_conda_activate_completions(){
+	if [ "${#COMP_WORDS[@]}" != "2" ]; then
+		return
+  fi
+
+	conda_envs=$(cat ~/.conda/environments.txt | cut -d/ -f6 | sed 's/^$/base/g')
+
+	COMPREPLY=($(compgen -W "$conda_envs" -- "${COMP_WORDS[1]}"))
+}
+
+_notes_completions(){
+	if [ "${#COMP_WORDS[@]}" != "2" ]; then
+		return
+  fi
+	COMPREPLY=($(compgen -W "$(ls ~/Desktop/notes/ | sed 's/\t//')" -- "${COMP_WORDS[1]}"))
+}
+
+_projects_completions(){
+	if [ "${#COMP_WORDS[@]}" != "2" ]; then
+		return
+  fi
+	COMPREPLY=($(compgen -W "$(ls ~/Desktop/projects/ | sed 's/\t//')" -- "${COMP_WORDS[1]}"))
+}
+
+complete -F _conda_activate_completions cona
+complete -F _conda_activate_completions conr
+complete -F _notes_completions note rmnote
+complete -F _projects_completions proj
+

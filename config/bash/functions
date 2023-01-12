@@ -1,0 +1,104 @@
+#!/bin/sh
+
+# Config editors
+reff(){
+	source ~/.profile
+	source ~/.bashrc
+	echo "bash reloaded"
+}
+prof(){
+	nano ~/.profile
+	source ~/.profile
+	echo "profile edited"
+}
+al(){
+	nano ~/.config/bash/aliases
+	source ~/.bashrc
+	echo "aliases edited"
+}
+autoc(){
+	nano ~/.config/bash/autocomplete
+	source ~/.bashrc
+	echo "autocomplete edited"
+}
+func(){
+	nano ~/.config/bash/functions
+	source ~/.bashrc
+	echo "functions edited"
+}
+
+bashrc(){
+	nano ~/.bashrc
+	source ~/.bashrc
+	echo "bash edited"
+}
+
+#syncer(){
+#	cp -r ~/.config/bash/ ~/.config/bin/ ~/.config/readline ~/git_things/wsl_configs/.config/
+#	cp ~/.profile ~/git_things/wsl_configs
+#}
+
+
+# Note related
+note(){
+	# Create/Edit Note
+	nano ~/Desktop/notes/$1
+}
+
+rmnote(){
+	# Delete Note
+	rm ~/Desktop/notes/$1
+}
+
+proj(){
+
+	if [[ $# == 0 ]]; then
+		cd ~/Desktop/projects
+	elif [[ $# == 1 ]]; then
+		cd ~/Desktop/projects/$1
+	else
+		echo "More that 1 input not supported"
+	fi
+}
+
+# Misc
+tmp(){
+	#Use a temporary working area
+	if [[ $# == 0 ]]; then
+		pushd .
+		cd ~/tmp/
+	else
+		popd
+		rm -rf ~/tmp/*
+		rm -rf ~/tmp/.n*
+	fi
+}
+
+olj(){
+	#Java switcher
+	if [[ $# == 0 ]]; then
+		mv ~/.config/bin/java ~/.config/bin/j
+		mv ~/.config/bin/javac ~/.config/bin/jc
+		source ~/.bashrc
+		echo "OpenJDK active"
+	else
+		mv ~/.config/bin/j ~/.config/bin/java
+		mv ~/.config/bin/jc ~/.config/bin/javac
+		source ~/.bashrc
+		echo "OracleJDK active"
+	fi
+}
+
+goto(){
+	#Finds and switches to directory of a software
+	cd $(dirname $(which $1))
+}
+
+meow(){
+	#Timepass
+	if [[ $# == 0 ]]; then
+		echo "meow"
+	else
+		echo $@
+	fi
+}
