@@ -24,8 +24,15 @@ _projects_completions(){
 	COMPREPLY=($(compgen -W "$(ls ~/Desktop/projects/ | sed 's/\t//')" -- "${COMP_WORDS[1]}"))
 }
 
+_git_branch_completions(){
+        if [ "${#COMP_WORDS[@]}" != "2" ]; then
+                return
+  fi
+        COMPREPLY=($(compgen -W "$(git branch | sed 's/*/ /g' | cut -d" " -f3)" -- "${COMP_WORDS[1]}"))
+}
+
 complete -F _conda_activate_completions cona
 complete -F _conda_activate_completions conr
 complete -F _notes_completions note rmnote
 complete -F _projects_completions proj
-
+complete -F _git_branch_completions gbranch gcheck
