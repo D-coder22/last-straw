@@ -45,6 +45,8 @@ alias ga='git add'
 alias gm='git commit'
 alias gp='git pull'
 alias gpp='git push'
+alias gcheck='git checkout'
+alias gbranch='git branch'
 
 #Conda Commands
 alias conn='conda create -n'
