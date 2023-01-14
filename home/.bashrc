@@ -15,6 +15,8 @@ source ~/.config/bash/anaconda
 source ~/.config/bash/theme
 
 
+shopt -s histappend
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 

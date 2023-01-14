@@ -1,0 +1,9 @@
+$include /etc/inputrc
+
+set expand-tilde on
+set colored-stats on
+set completion-ignore-case on
+set show-mode-in-prompt on
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward

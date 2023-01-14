@@ -2,6 +2,10 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
+# Configs
+export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
+
+
 
 export AMD_VULKAN_ICD=RADV
 export BROWSER=firedragon
@@ -15,7 +19,7 @@ export VISUAL=kate
 
 
 
-
+export HISTSIZE="100000"
 
 
 source ~/.bashrc
