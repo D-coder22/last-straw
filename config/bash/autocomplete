@@ -5,7 +5,7 @@ _conda_activate_completions(){
 		return
   fi
 
-	conda_envs=$(cat ~/.conda/environments.txt | cut -d/ -f6 | sed 's/^$/base/g')
+	conda_envs=$(cat ~/.conda/environments.txt | cut -d/ -f8 | sed 's/^$/base/g')
 
 	COMPREPLY=($(compgen -W "$conda_envs" -- "${COMP_WORDS[1]}"))
 }
